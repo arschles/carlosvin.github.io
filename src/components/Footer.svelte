@@ -21,7 +21,7 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
                 <img 
 					alt="Link to my GitHub profile"
                     class="github"
-                    src="/img/github.svg"
+                    src="/images/github.svg"
                 />
             </a>◾
             <a
@@ -32,7 +32,7 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
                 <img
 					alt="Link to my Twitter feed"
                     class="twitter"
-                    src="/img/twitter.svg"
+                    src="/images/twitter.svg"
                 />
             </a>◾
             <a
@@ -44,7 +44,7 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
                     style="max-height:20px"
 					alt="Go in 5 Minutes Gopher"
                     class="gifm"
-                    src="/img/gifm.png"
+                    src="/images/gifm.png"
                 />
             </a>◾
             <a
@@ -55,7 +55,7 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
                 <img
 					alt="RSS feed"
                     class="rss"
-                    src="/img/rss.svg"
+                    src="/images/rss.svg"
                 />
             </a>
         </div>
@@ -68,11 +68,6 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
 </footer>
 
 <style>
-.icon {
-    color: red;
-    width: 32px;
-    height: 32px;
-}
 footer img {
     max-width: 15px;
     display: inline;

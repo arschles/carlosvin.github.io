@@ -3,7 +3,7 @@ export const SITE_NAME = {
 };
 
 export const SITE_DESCRIPTION = {
-    "es": "Thoughts",
+    "es": "Aaron's Home on the Web",
 };
 
 export const BLOG_BASE_PATH = 'blog';
