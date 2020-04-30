@@ -8,6 +8,7 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import glob from 'rollup-plugin-glob';
 import asciidoc from 'rollup-plugin-asciidoc';
+import markdown from '@jackfranklin/rollup-plugin-markdown'
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -34,6 +35,7 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			markdown(),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -78,6 +80,7 @@ export default {
 			}),
 			commonjs(),
 			asciidoc(),
+			markdown(),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))

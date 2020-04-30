@@ -1,18 +1,17 @@
-import allAdoc from '../posts/**/*.adoc';
+import allPosts from '../posts/**/*.md';
 import {toSlug, toCapitalize} from './services/slug';
-import {getLangSimplified} from './services/lang';
 
-const requiredFields = ['date', 'title', 'slug', 'lang'];
+const requiredFields = ['date', 'title', 'slug'];
 
 class BlogStore {
     
     constructor() {
         this._posts = new Map();
-        this._langs = new Map();
         this._categories = new Map();
         this._postsByCategory = new Map();
-        allAdoc.forEach(post => this._add(post)); // adds post to this._posts
-        this._lang = getLangSimplified();
+        allPosts.forEach(post => {
+            this._add(post)
+        }); // adds post to this._posts
         this._index = [];
         for (const byLang of this._posts.values()) {
             let post = byLang[this._lang];
@@ -27,13 +26,6 @@ class BlogStore {
         this._index.sort((a, b) => b.date && b.date.localeCompare(a.date));
     }
 
-    _addLang (lang, date) {
-        let savedDate = this._langs.get(lang);
-        if (!savedDate || savedDate < date) {
-            this._langs.set(lang, date);
-        }
-    }
-
     getByLang(inputLang) {
         // TODO we could improve the performance here by storing posts by lang in a different map
         return [...this.posts.values()]
@@ -44,7 +36,6 @@ class BlogStore {
     _add(post) {
         const postModel = BlogStore._toModel(post);
         const {slug, lang, date} = postModel;
-        this._addLang(lang, date);
         this._categorize(postModel);
         let translatedPosts = this._posts.get(slug);
         if (translatedPosts) {
@@ -73,12 +64,11 @@ class BlogStore {
         }
     }
 
-    static _toModel({metadata, html, filename}) {
+    static _toModel({html, metadata, filename}) {
         const slug = metadata.slug || toSlug(filename.split('.')[0]);
         const post = {
             ...metadata,
-            title: metadata.title || metadata.doctitle,
-            lang: metadata.lang,
+            title: metadata.title,
             summary: metadata.summary || metadata.description,
             html,
             slug,
@@ -89,7 +79,9 @@ class BlogStore {
     }
 
     static validate(post) {
-        requiredFields.forEach(f => BlogStore._validate(post, f));
+        requiredFields.forEach(f => {
+            BlogStore._validate(post, f)
+        });
     }
 
     static _validate(post, field) {
