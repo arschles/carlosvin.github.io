@@ -7,7 +7,7 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import glob from 'rollup-plugin-glob';
-import asciidoc from 'rollup-plugin-asciidoc';
+
 import markdown from '@jackfranklin/rollup-plugin-markdown'
 
 const mode = process.env.NODE_ENV;
@@ -15,8 +15,6 @@ const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
-
-const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
 export default {
 	client: {
@@ -34,7 +32,7 @@ export default {
 			}),
 			resolve({
 				browser: true,
-				dedupe
+				dedupe: ['svelte']
 			}),
 			commonjs(),
 			markdown(),
@@ -68,7 +66,7 @@ export default {
 		input: config.server.input(),
 		output: config.server.output(),
 		plugins: [
-      		glob(),
+			glob(),
 			replace({
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode)
@@ -78,11 +76,9 @@ export default {
 				dev
 			}),
 			resolve({
-				browser: true,
 				dedupe: ['svelte']
 			}),
 			commonjs(),
-			asciidoc(),
 			markdown(),
 		],
 		external: Object.keys(pkg.dependencies).concat(
