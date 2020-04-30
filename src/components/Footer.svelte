@@ -4,7 +4,6 @@ img {
 }
 a, a:active {
     color: black;
-    font-size: 80em;
 }
 </style>
 
