@@ -18,11 +18,6 @@
 </script>
 
 <style>
-	li {
-		display: block;
-		float: left;
-	}
-
 	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
@@ -45,8 +40,6 @@
 	}
 </style>
 
-<li>
-    <a aria-current='{current}' {href}>
-        <slot></slot>
-    </a>
-</li>
+<a aria-current='{current}' type="button" class="btn btn-link text-dark" href={href}>
+	<slot></slot>
+</a>

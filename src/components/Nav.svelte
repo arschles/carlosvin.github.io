@@ -57,14 +57,32 @@
 
 </style>
 
-<nav>
-	<button on:click={toggle}>≡</button>
-	<ul class={open ? 'open' : 'closed'}>
-		<NavEntry href='.' segment={segment}>{siteName}</NavEntry>
-		<!-- <NavEntry href='categories' segment={segment}>Categories</NavEntry> -->
-		<NavEntry href='about' segment={segment}>About</NavEntry>
-		<NavEntry href='speaking' segment={segment}>Speaking</NavEntry>
-		<NavEntry href='teaching' segment={segment}>Teaching</NavEntry>
-	</ul>
-	<slot></slot>
-</nav>
+<div class="container mt-2">
+	<div class="row">
+		<div class="offset-sm-2">
+				<NavEntry
+					href='/about'
+					segment={segment}
+				>
+					about
+				</NavEntry>
+				<NavEntry
+					href="/speaking"
+					segment={segment}
+				>
+					speaking
+				</NavEntry>
+				<NavEntry
+					href="/teaching"
+					segment={segment}
+				>
+					teaching
+				</NavEntry>
+		</div>
+	</div>
+	<div class="row">
+		<div class="offset-sm-2">
+			<h1><a href="/">arschles.com</a></h1>
+		</div>
+	</div>
+</div>

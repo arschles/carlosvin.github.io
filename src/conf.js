@@ -1,5 +1,5 @@
 export const SITE_NAME = {
-    "es": 'arschles.com"',
+    "en": 'arschles.com',
 };
 
 export const SITE_DESCRIPTION = {

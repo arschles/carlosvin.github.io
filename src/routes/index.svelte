@@ -11,8 +11,8 @@
 </script>
 
 <script>
-  import Index from "../components/posts/Index.svelte";
-  import Header from "../components/posts/Header.svelte";
+  import List from "../components/posts/List.svelte";
+  import index from './index.md'
   import { getSiteName, getDescription } from "../services/lang";
 
   export let posts;
@@ -28,5 +28,6 @@
   <meta name="description" content={getDescription()} />
 </svelte:head>
 
-<Header {numPosts}/>
-<Index {posts}/>
+{@html index.html}
+
+<List {posts} />
