@@ -19,3 +19,8 @@
   <slot></slot>
 </div>
 
+<style>
+#nav-container {
+  margin-bottom:2em;
+}
+</style>

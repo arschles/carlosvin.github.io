@@ -1,5 +1,7 @@
 <script>
 import speaking from './speaking.md'
+import MainPage from '../components/MainPage.svelte'
+import SizedCol from '../components/SizedCol.svelte'
 let speakingHTML = speaking.html
 </script>
 
@@ -7,4 +9,11 @@ let speakingHTML = speaking.html
 	<title>Speaking</title>
 </svelte:head>
 
-{@html speakingHTML}
+<MainPage>
+  <div id="body" class="row">
+    <SizedCol>
+      {@html speakingHTML}
+    </SizedCol>
+  </div>
+</MainPage>
+

@@ -28,7 +28,7 @@
 </svelte:head>
 
 <MainPage>
-    <div id="body" class="row">
+  <div id="body" class="row">
     <SizedCol>
       {@html index.html}
     </SizedCol>

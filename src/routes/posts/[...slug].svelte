@@ -22,6 +22,8 @@
   import { url } from "../../services/models";
   import { getIsoDateStr } from "../../services/dates";
   import Share from "../../components/Share.svelte";
+  import MainPage from '../../components/MainPage.svelte';
+  import SizedCol from '../../components/SizedCol.svelte'
 
   // TODO remove workaround for this issue https://github.com/sveltejs/sapper/issues/904
   onMount(async () => {
@@ -65,7 +67,6 @@
   }
 
   .content :global(h2::after, h3::after, h4::after, h5::after, h6::after) {
-    content: " <";
     color: #bbb;
     font-weight: lighter;
   }
@@ -73,21 +74,6 @@
   .content
     :global(h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::after, h6:hover::after) {
     color: #666;
-  }
-  .content :global(h3::after) {
-    content: " <<";
-  }
-
-  .content :global(h4::after) {
-    content: " <<<";
-  }
-
-  .content :global(h5::after) {
-    content: " <<<<";
-  }
-
-  .content :global(h6::after) {
-    content: " <<<<<";
   }
 
   .content :global(h3) {
@@ -152,7 +138,6 @@
     padding-left: 0.3em;
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: "icomoon" !important;
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -229,20 +214,20 @@
   </noscript>
 </svelte:head>
 
-<header>
-  <h1>{post.title}
-    <span class='share'>
-    <Share
-      title={post.title}
-      keywords={post.keywords}
-      text={post.description}
-      url={url(post.slug, post.lang)} />
-    </span>
-  </h1>
-  <p class="description">{post.description} </p>
-  
-</header>
+<MainPage>
+  <div id="body" class="row">
+    <SizedCol>
+      <header>
+        <h1>
+          {post.title}
+        </h1>
+        <p class="description">{post.description} </p>
+      </header>
 
-<div class="content">
-  {@html post.html}
-</div>
+      <div class="content">
+        {@html post.html}
+      </div>
+    </SizedCol>
+  </div>
+</MainPage>
+
