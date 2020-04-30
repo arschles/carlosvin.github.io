@@ -1,7 +1,5 @@
 <script>
 import SizedCol from './SizedCol.svelte'
-import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
-
 </script>
 
 <footer class="container footer mt-5 mb-4">
