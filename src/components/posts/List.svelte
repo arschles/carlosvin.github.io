@@ -6,12 +6,9 @@ export let posts;
 </script>
 
 
-<div class="container content posts-list">
-  {#each posts as post}
-  <div class="row">
-    <SizedCol>
-      <Entry {post}/>
-    </SizedCol>
+{#each posts as post}
+  <div class="post mb-2" id={post.slug}>
+    <Entry {post}/>
   </div>
-  {/each}
-</div>
+{/each}
+

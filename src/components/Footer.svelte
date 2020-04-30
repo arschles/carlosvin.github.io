@@ -1,4 +1,13 @@
-<script></script>
+<style>
+img {
+    max-width: 20px;
+}
+a, a:active {
+    color: black;
+    font-size: 80em;
+}
+</style>
+
 <div class="container footer mt-5 mb-4">
     <div class="links row">
         <div class="offset-sm-2 col-sm-10">

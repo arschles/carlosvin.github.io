@@ -12,17 +12,6 @@
 	const rssUrl = `/rss`;
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
-
 <svelte:head>
 	<link
 		rel="alternate"
@@ -30,13 +19,8 @@
 		title={rssTitle}
 		href={rssUrl} />
 </svelte:head>
-<Nav {segment} {siteName}>
-	<Social>
-		<IconLink icon="rss" href={rssUrl} title={rssTitle} />
-	</Social>
-</Nav>
 
-<main>
+<main class="mt-2" segment={segment}>
 	<slot></slot>
 </main>
 
