@@ -39,33 +39,13 @@
   }
 </style>
 
-{#if post}
-  <Entry>
-    <div class="container">
-      <a rel="prefetch" href={path(post.slug)} class="title">{post.title}</a>
-      <div class='subtitle'>
-        <span class="date">{new Date(post.date).toLocaleDateString()}</span>
-        <span class="langs summary">
-          Available in
-          <span class="lang">
-            <a href={path(post.slug, post.lang)}>{post.lang}</a>
-          </span>
-          {#if post.otherLangs}
-            {#each post.otherLangs as lang}
-              <span class="lang">
-                <a href={path(post.slug, lang)}>{lang}</a>
-              </span>
-            {/each}
-          {/if}
-        </span>
-      </div>
-      <div class="description">
-        <div class="content">
-          {#if post.summary}
-            <span class="summary">{post.summary}.</span>
-          {/if}
-        </div>
-      </div>
-    </div>
-  </Entry>
-{/if}
+<a
+  rel="prefetch"
+  href={path(post.slug)}
+  class="title"
+>
+  <span class="post-title">{post.title}</span>
+</a>
+<span class="post-date">
+  {new Date(post.date).toLocaleDateString()}
+</span>

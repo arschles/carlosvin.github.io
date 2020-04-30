@@ -21,7 +21,6 @@
 	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
-		display: block;
 	}
     
 	[aria-current] {
@@ -40,6 +39,10 @@
 	}
 </style>
 
-<a aria-current='{current}' type="button" class="btn btn-link text-dark" href={href}>
+<a
+	type="button"
+	class="btn btn-link text-dark"
+	href={href}
+>
 	<slot></slot>
 </a>

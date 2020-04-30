@@ -36,12 +36,8 @@
 	</Social>
 </Nav>
 
-<main class="container">
-	<div class="row">
-		<div class="offset-sm-2 col-sm-8">
-			<slot></slot>
-		</div>
-	</div>
+<main>
+	<slot></slot>
 </main>
 
 <Footer></Footer>

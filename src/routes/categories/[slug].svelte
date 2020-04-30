@@ -33,4 +33,4 @@
 </svelte:head>
 <h1>{`Posts related with ${category}`}</h1>
 
-<Index {posts}/>
+<List {posts}/>

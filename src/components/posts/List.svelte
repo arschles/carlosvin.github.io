@@ -1,13 +1,17 @@
 
 <script>
-  import Index from '../Index.svelte';
-  import Entry from './Entry.svelte';
-  export let posts;
+import Entry from './Entry.svelte';
+import SizedCol from "../SizedCol.svelte";
+export let posts;
 </script>
 
 
-<Index>
+<div class="container content posts-list">
   {#each posts as post}
-    <Entry {post}/>
+  <div class="row">
+    <SizedCol>
+      <Entry {post}/>
+    </SizedCol>
+  </div>
   {/each}
-</Index>
+</div>
