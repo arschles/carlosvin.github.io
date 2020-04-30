@@ -42,9 +42,9 @@
 </MainPage>
 
 <style>
-  div#body{
-    font-family: "Lucida Console", "Monaco", "monospace";
-    font-size: 1.2em;
-  }
+div#body{
+  font-family: "Lucida Console", "Monaco", "monospace";
+  font-size: 1.2em;
+}
 </style>
 
