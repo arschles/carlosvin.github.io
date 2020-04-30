@@ -1,13 +1,3 @@
-<style>
-img {
-    width: 20px;
-    height:auto;
-}
-a, a:active {
-    color: black;
-}
-</style>
-
 <div class="container footer mt-5 mb-4">
     <div class="links row">
         <div class="offset-sm-2 col-sm-10">
@@ -69,3 +59,13 @@ a, a:active {
         </div>
     </div>
 </div>
+
+<style>
+img {
+    width: 20px;
+    height:auto;
+}
+a, a:active {
+    color: black;
+}
+</style>
