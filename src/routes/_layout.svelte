@@ -1,5 +1,6 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import Footer from '../components/Footer.svelte'
   	import { getSiteName } from "../services/lang";
 	import Social from '../components/Social.svelte';
 	import IconLink from '../components/IconLink.svelte';
@@ -38,3 +39,5 @@
 <main>
 	<slot></slot>
 </main>
+
+<Footer></Footer>

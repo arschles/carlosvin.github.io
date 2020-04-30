@@ -1,6 +1,6 @@
 {
-  "name": "carlos-says-bla-bla",
-  "description": "Carlos says bla bla blog",
+  "name": "arschles.com",
+  "description": "Aaron's Blog",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

@@ -64,6 +64,7 @@
 		<!-- <NavEntry href='categories' segment={segment}>Categories</NavEntry> -->
 		<NavEntry href='about' segment={segment}>About</NavEntry>
 		<NavEntry href='speaking' segment={segment}>Speaking</NavEntry>
+		<NavEntry href='teaching' segment={segment}>Teaching</NavEntry>
 	</ul>
 	<slot></slot>
 </nav>

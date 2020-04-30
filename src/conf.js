@@ -1,11 +1,9 @@
 export const SITE_NAME = {
-    "es": 'Carlos says "bla bla"',
-    "en": 'Carlos dice "bla bla"',
+    "es": 'arschles.com"',
 };
 
 export const SITE_DESCRIPTION = {
-    "es": "Qué está pasando por mi cabeza y alrededores",
-    "en": "What is going on in my mind and its surroundings",
+    "es": "Thoughts",
 };
 
 export const BLOG_BASE_PATH = 'posts';
