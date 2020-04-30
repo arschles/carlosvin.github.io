@@ -1,6 +1,7 @@
 <style>
 img {
-    max-width: 20px;
+    width: 20px;
+    height:auto;
 }
 a, a:active {
     color: black;
