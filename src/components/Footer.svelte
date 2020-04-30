@@ -1,15 +1,21 @@
-<div class="container footer mt-5 mb-4">
+<script>
+import SizedCol from './SizedCol.svelte'
+import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte';
+
+</script>
+
+<footer class="container footer mt-5 mb-4">
     <div class="links row">
-        <div class="offset-sm-2 col-sm-10">
+        <SizedCol id="ultimate-guide">
             <strong>
                 <a href="https://gumroad.com/l/hgHhj">
                     The Ultimate Guide to Web Apps in Go
                 </a>
             </strong>
-        </div>
+        </SizedCol>
     </div>
     <div class="links row">
-        <div class="offset-sm-2 col-sm-10">
+        <div class="offset-sm-2 col-sm-8">
             <a class="mr-2" href="https://github.com/arschles">
                 github.com/arschles
                 <img 
@@ -35,6 +41,7 @@
             >
                 Go in 5 Minutes
                 <img
+                    style="max-height:20px"
 					alt="Go in 5 Minutes Gopher"
                     class="gifm"
                     src="/img/gifm.png"
@@ -58,14 +65,20 @@
 			Copyright &copy; 2017-2020 Aaron Schlesinger
         </div>
     </div>
-</div>
+</footer>
 
 <style>
-img {
-    width: 20px;
-    height:auto;
+.icon {
+    color: red;
+    width: 32px;
+    height: 32px;
 }
-a, a:active {
+footer img {
+    max-width: 15px;
+    display: inline;
+}
+a {
     color: black;
+    display:inline;
 }
 </style>
