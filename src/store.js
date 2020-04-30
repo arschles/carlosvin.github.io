@@ -23,7 +23,10 @@ class BlogStore {
             const entry = BlogStore._toIndexEntry(post, langs);
             this._index.push(entry);
         }
-        this._index.sort((a, b) => b.date && b.date.localeCompare(a.date));
+        this._index.sort((a, b) => {
+            b.date && b.date.localeCompare(a.date)
+        });
+        this._index.reverse()
     }
 
     getByLang(inputLang) {
