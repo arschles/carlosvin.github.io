@@ -19,7 +19,7 @@
   import { onMount } from "svelte";
   import { path } from "../../services/models";
   import { getIsoDateStr } from "../../services/dates";
-  import Index from "../../components/posts/Index.svelte";
+  import List from "../../components/posts/List.svelte";
 
   export let category;
   export let posts;
