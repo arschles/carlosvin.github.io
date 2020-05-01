@@ -1,5 +1,5 @@
 ---
-author: "Aaron Schlesinger"
+author: 'Aaron Schlesinger'
 date: 'October 5, 2018'
 title: 'Emerging Languages'
 slug: 'emerging-languages'
